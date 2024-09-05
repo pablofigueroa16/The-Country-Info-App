@@ -1,11 +1,11 @@
+require("dotenv").config();
 const express = require("express");
 const axios = require("axios");
 const cors = require("cors");
-
 const app = express();
-const port = 3000;
+const port = process.env.PORT || 3000;
 
-app.use(cors({ origin: "*" }));
+app.use(cors({ origin: "http://localhost:3001" }));
 
 app.get("/", (req, res) => {
   res.send("API Backend running");
@@ -51,7 +51,9 @@ app.get("/country/:code", async (req, res) => {
         country.iso2 === countryCode || country.iso3 === countryInfo.data.cca3
     );
 
-    const flagUrl = flagData ? flagData.flag : "No flag available";
+    const flagUrl = flagData
+      ? flagData.flag
+      : "https://w7.pngwing.com/pngs/395/684/png-transparent-computer-icons-flag-flag-miscellaneous-angle-flag-thumbnail.png";
 
     res.json({
       name: countryName,
