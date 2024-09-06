@@ -16,7 +16,7 @@ const CountryList = () => {
   const [currentPage, setCurrentPage] = useState(1)
   const [error, setError] = useState<string | null>(null)
   const [loading, setLoading] = useState(true)
-  const countriesPerPage = 10
+  const countriesPerPage = 9
 
   useEffect(() => {
     const fetchCountries = async () => {
@@ -58,12 +58,14 @@ const CountryList = () => {
         Available Countries
       </h1>
 
-      {loading && <div className='flex justify-center items-center w-full h-screen bg-gradient-to-b from-blue-500 to-blue-300'>
-        <div className='flex flex-col items-center'>
-          <div className={Style.spinner}></div>
-          <p className='text-3xl text-white mt-4'>Loading...</p>
+      {loading && (
+        <div className='flex justify-center items-center w-full h-screen bg-gradient-to-b from-blue-500 to-blue-300'>
+          <div className='flex flex-col items-center'>
+            <div className={Style.spinner}></div>
+            <p className='text-3xl text-white mt-4'>Loading...</p>
+          </div>
         </div>
-      </div>}
+      )}
       {error && <p className='text-xl text-red-500'>{error}</p>}
       {!loading && !error && <Countries currentCountries={currentCountries} />}
 

@@ -6,7 +6,7 @@ import PopulationChart from '../../components/PopulationChart'
 import BorderCountries from '@/app/components/BorderCountries'
 import CountryCard from '@/app/components/CountryCard'
 import ButtonBack from '@/app/components/ButtonBack'
-import Style from "@/app/spinner.module.css"
+import Style from '@/app/spinner.module.css'
 
 interface CountryData {
   name: string

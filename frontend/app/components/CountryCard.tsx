@@ -1,10 +1,10 @@
 import Image from 'next/image'
 import React from 'react'
-import defaultImage from '../images/pngwing.com.png' 
+import defaultImage from '../images/pngwing.com.png'
 
 interface Country {
   name: string
-  flagUrl?: string 
+  flagUrl?: string
 }
 
 interface CountryCardProps {
@@ -12,7 +12,7 @@ interface CountryCardProps {
 }
 
 const CountryCard: React.FC<CountryCardProps> = ({ country }) => {
-  const imageUrl = country?.flagUrl ? country.flagUrl : defaultImage;
+  const imageUrl = country?.flagUrl ? country.flagUrl : defaultImage
 
   return (
     <div className='flex flex-col items-center justify-center mt-8 md:w-1/2 md:mb-0'>
